@@ -82,8 +82,8 @@ export default function Home() {
           <a href="https://t.me/@qtvkn" target="_blank" className="text-purple-400 hover:text-white transition-colors flex items-center gap-2">
             Telegram
           </a>
-          <a href="www.linkedin.com/in/ivan-dan-68a9b33a9" target="_blank" className="text-purple-400 hover:text-white transition-colors flex items-center gap-2">
-            LinkedIn
+          <a href="https://www.linkedin.com/in/ivan-dan-68a9b33a9" target="_blank" className="text-purple-400 hover:text-white transition-colors flex items-center gap-2">
+          LinkedIn
           </a>
         </div>
         <p className="mt-16 text-gray-600 text-sm italic">
