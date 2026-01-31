@@ -50,13 +50,13 @@ export default function Home() {
         
         <div className="flex gap-2 mb-8">
           <input 
-            type="text"
-            value={input} // Связываем поле с переменной для очистки
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && addTask()}
-            placeholder="What needs to be done?"
-            className="flex-1 bg-black border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none text-white transition-all"
-          />
+  type="text"
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
+  onKeyDown={(e) => e.key === 'Enter' && addTask()}
+  placeholder="What needs to be done?"
+  className="flex-1 bg-black border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none text-white transition-all"
+/>
           <button 
             onClick={addTask} 
             className="px-6 py-3 bg-purple-600 rounded-xl font-bold hover:bg-purple-500 transition-all active:scale-95"
