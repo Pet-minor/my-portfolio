@@ -1,44 +1,55 @@
 export default function Home() {
+  const skills = ["React", "Next.js", "TypeScript", "Tailwind CSS", "Git"];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-black text-white p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-800 bg-zinc-800/30 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-zinc-800/30 lg:p-4">
-          Status: <span className="text-green-500 ml-2">Building Portfolio 🚀</span>
-        </p>
-      </div>
+    <main className="min-h-screen bg-[#0a0a0a] text-white selection:bg-purple-500/30">
+      {/* Шапка */}
+      <nav className="flex justify-between items-center p-8 max-w-6xl mx-auto">
+        <div className="text-xl font-bold tracking-tighter">IVAN.DEV</div>
+        <div className="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-xs">
+          Available for projects
+        </div>
+      </nav>
 
-      <div className="flex flex-col items-center mt-20">
-        <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-          Hi, I'm Ivan
+      {/* Главный блок */}
+      <section className="flex flex-col items-center justify-center pt-20 pb-32 px-4 text-center">
+        <div className="inline-block px-3 py-1 mb-6 text-sm font-medium text-purple-400 rounded-full bg-purple-400/10 border border-purple-400/20">
+          Future Full-stack Developer
+        </div>
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
+          Creating digital <br /> experiences.
         </h1>
-        <p className="text-2xl mt-4 text-gray-400">
-          Full-stack Developer (React / Next.js / TS)
+        <p className="max-w-2xl text-gray-400 text-lg md:text-xl mb-10">
+          Привет! Я Иван. Строю современные приложения, пока готовлюсь к переезду 12 марта. 
+          Это моё первое живое портфолио.
         </p>
-        
-        <div className="mt-10 flex gap-4">
-          <button className="px-6 py-3 bg-white text-black rounded-full font-bold hover:bg-gray-200 transition">
-            View My Projects
-          </button>
-          <button className="px-6 py-3 border border-gray-700 rounded-full font-bold hover:bg-gray-900 transition">
-            Contact Me
-          </button>
+        <div className="flex gap-4">
+          <a href="#contact" className="px-8 py-4 bg-white text-black rounded-xl font-bold hover:scale-105 transition-transform">
+            Связаться со мной
+          </a>
         </div>
-      </div>
+      </section>
 
-      <div className="mt-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-700 hover:bg-neutral-800/30">
-          <h2 className="mb-3 text-2xl font-semibold text-blue-400">Next.js 15</h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">Fast, SEO-friendly apps.</p>
+      {/* Стек технологий */}
+      <section className="max-w-6xl mx-auto px-8 py-20 border-t border-white/5">
+        <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-12 text-center">Мой стек технологий</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          {skills.map((skill) => (
+            <span key={skill} className="px-6 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-colors text-lg">
+              {skill}
+            </span>
+          ))}
         </div>
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-700 hover:bg-neutral-800/30">
-          <h2 className="mb-3 text-2xl font-semibold text-purple-400">TypeScript</h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">Safe and scalable code.</p>
+      </section>
+
+      {/* Футер/Контакты */}
+      <footer id="contact" className="max-w-6xl mx-auto px-8 py-20 text-center">
+        <h2 className="text-3xl font-bold mb-4">Есть идея для проекта?</h2>
+        <p className="text-gray-400 mb-8 text-lg">Пиши, обсудим реализацию.</p>
+        <div className="text-2xl font-mono text-purple-400 hover:underline cursor-pointer">
+          iv12344567@gmail.com
         </div>
-        <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-700 hover:bg-neutral-800/30">
-          <h2 className="mb-3 text-2xl font-semibold text-teal-400">Tailwind</h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">Modern UI design.</p>
-        </div>
-      </div>
+      </footer>
     </main>
   );
 }
