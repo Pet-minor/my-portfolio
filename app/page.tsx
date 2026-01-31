@@ -8,7 +8,7 @@ export default function Home() {
   const addTask = () => {
     if (input.trim()) {
       setTasks([...tasks, { id: Date.now(), text: input }]);
-      setInput(""); // Это очищает переменную в памяти
+      setInput("");
     }
   };
 
@@ -27,7 +27,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="flex flex-col items-center justify-center pt-20 pb-24 px-4 text-center">
         <div className="inline-block px-3 py-1 mb-6 text-sm font-medium text-purple-400 rounded-full bg-purple-400/10 border border-purple-400/20">
           Software Engineer
@@ -43,24 +42,18 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Interactive Project: Task Manager */}
       <section className="max-w-2xl mx-auto px-8 py-16 mb-20 bg-white/5 rounded-3xl border border-white/10 shadow-2xl">
         <h2 className="text-2xl font-bold mb-4 text-purple-400">Project: Task Manager</h2>
-        <p className="text-gray-500 mb-8 text-sm italic text-center">Live Demo: Testing React State Management</p>
-        
         <div className="flex gap-2 mb-8">
           <input 
-  type="text"
-  value={input}
-  onChange={(e) => setInput(e.target.value)}
-  onKeyDown={(e) => e.key === 'Enter' && addTask()}
-  placeholder="What needs to be done?"
-  className="flex-1 bg-black border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none text-white transition-all"
-/>
-          <button 
-            onClick={addTask} 
-            className="px-6 py-3 bg-purple-600 rounded-xl font-bold hover:bg-purple-500 transition-all active:scale-95"
-          >
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && addTask()}
+            placeholder="What needs to be done?"
+            className="flex-1 bg-black border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none text-white transition-all"
+          />
+          <button onClick={addTask} className="px-6 py-3 bg-purple-600 rounded-xl font-bold hover:bg-purple-500 transition-all active:scale-95">
             Add
           </button>
         </div>
@@ -69,48 +62,20 @@ export default function Home() {
           {tasks.map(task => (
             <div key={task.id} className="flex justify-between items-center p-4 bg-white/5 rounded-xl border border-white/5 group hover:border-white/20 transition-all">
               <span className="text-gray-200">{task.text}</span>
-              <button 
-                onClick={() => deleteTask(task.id)}
-                className="text-gray-600 hover:text-red-400 transition-colors px-2"
-              >
-                ✕
-              </button>
+              <button onClick={() => deleteTask(task.id)} className="text-gray-600 hover:text-red-400 transition-colors px-2">✕</button>
             </div>
           ))}
-          {tasks.length === 0 && (
-            <p className="text-center text-gray-600 italic py-4">Your list is empty. Add something above!</p>
-          )}
         </div>
       </section>
 
-      {/* Skills */}
-      <section className="max-w-6xl mx-auto px-8 py-20 border-t border-white/5 text-center">
-        <div className="flex flex-wrap justify-center gap-4">
-          {skills.map((skill) => (
-            <span key={skill} className="px-5 py-2 rounded-xl bg-white/5 border border-white/10 text-sm font-medium text-gray-400">
-              {skill}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Footer */}
       <footer className="max-w-6xl mx-auto px-8 py-32 text-center border-t border-white/5">
         <div className="flex flex-wrap justify-center items-center gap-12 text-xl font-bold">
-          <a href="mailto:iv12344567@gmail.com" className="text-purple-400 hover:text-white transition-colors">
-            Email
-          </a>
-          <a href="https://t.me/qtvkn" target="_blank" className="text-purple-400 hover:text-white transition-colors">
-            Telegram
-          </a>
-          <a href="https://www.linkedin.com/in/ivan-dan-68a9b33a9" target="_blank" className="text-purple-400 hover:text-white transition-colors">
-            LinkedIn
-          </a>
+          <a href="mailto:iv12344567@gmail.com" className="text-purple-400 hover:text-white transition-colors">Email</a>
+          <a href="https://t.me/qtvkn" target="_blank" className="text-purple-400 hover:text-white transition-colors">Telegram</a>
+          <a href="https://www.linkedin.com/in/ivan-dan-68a9b33a9" target="_blank" className="text-purple-400 hover:text-white transition-colors">LinkedIn</a>
         </div>
-        <p className="mt-16 text-gray-600 text-sm italic">
-          Software Engineer — Available for projects from March 12th
-        </p>
+        <p className="mt-16 text-gray-600 text-sm italic">Available for projects from March 12th</p>
       </footer>
     </main>
   );
- }
+}
